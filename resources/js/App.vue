@@ -6,7 +6,7 @@
                 aria-expanded="false" aria-label="Toggle navigation"></button>
             <div class="navbar-nav" v-if="isLoggedIn">
                 <router-link to="/dashboard" class="nav-item nav-link">Dashboard</router-link>
-                <a class="nav-item nav-link" @click="logout">Logout</a>
+                <a class="nav-item nav-link" style="cursor: pointer;" @click="logout">Logout</a>
             </div>
             <div class="navbar-nav" v-else>
                 <router-link to="/" class="nav-item nav-link">Home</router-link>

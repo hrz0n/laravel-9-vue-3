@@ -4,10 +4,10 @@
             <div class="col-md-8">
                 <div v-if="error !== null" class="alert alert-danger alert-dismissible fade show" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                
+
                     <strong>{{error}}</strong>
                 </div>
-                
+
                 <div class="card card-default">
                     <div class="card-header"><h5>Register New User</h5></div>
                     <div class="card-body">
@@ -21,7 +21,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
+                            <div class="form-group row mt-1">
                                 <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
                                 <div class="col-md-8">
                                     <input id="email" type="email" class="form-control" v-model="email" required
@@ -49,7 +49,7 @@
                             <div class="row mt-1">
                                 <div class="col-md-8 offset-md-4">
                                     <small class="text-muted">
-                                        Have an account? Please 
+                                        Have an account? Please
                                         <router-link to="/login" >login</router-link>
                                     </small>
                                 </div>
@@ -59,7 +59,7 @@
                         </form>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -88,7 +88,7 @@
                         })
                         .then(response => {
                             if (response.data.success) {
-                                this.$router.go('/login')
+                                 window.location.href = "/login"
                             } else {
                                 this.error = response.data.message
                             }
