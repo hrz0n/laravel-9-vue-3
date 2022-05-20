@@ -5,6 +5,9 @@ import Home from '../pages/Home';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
+import Posts from '../components/Posts';
+import EditPost from '../components/EditPost';
+import AddPost from '../components/AddPost';
 
 export const routes = [
     {
@@ -26,6 +29,21 @@ export const routes = [
         name: 'dashboard',
         path: '/dashboard',
         component: Dashboard
+    },
+    {
+        name: 'posts',
+        path: '/posts',
+        component: Posts
+    },
+    {
+        name: 'addpost',
+        path: '/posts/add',
+        component: AddPost
+    },
+    {
+        name: 'editpost',
+        path: '/posts/edit/:id',
+        component: EditPost
     }
 ];
 
