@@ -58,6 +58,7 @@ class PostsController extends Controller
             $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $imageName);
             $input['image'] = $imageName;
+            unlink('img/'.$post->image);
         }
         
         $post->update($input);
@@ -69,7 +70,7 @@ class PostsController extends Controller
     {
         $post = Posts::find($id);
         $post->delete();
-
+        unlink('img/'.$post->image);
         return response()->json(['success'=> 'Post deleted successfully']);
 
     }
